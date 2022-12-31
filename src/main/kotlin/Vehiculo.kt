@@ -82,11 +82,17 @@ fun main() {
 
     val coche1 = Coche(2019,"2045 LJD","Azul","Audi","Q5")
 
-    val moto1 = Moto(2018,"6834 LPT","Verde","BMW","X4")
+    val moto1 = Moto(2018,"6834 LPT","Verde","Kawasaki","Ninja 250SL")
 
     coche1.cambioColor("Rojo")
+    println(coche1.arrancar())
+    println(coche1.parar())
 
     println(coche1)
+
+    moto1.cambioColor("Morado")
+    println(moto1.arrancar())
+    println(moto1.parar())
 
     println(moto1)
 
