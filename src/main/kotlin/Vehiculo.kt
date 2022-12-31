@@ -1,28 +1,93 @@
 /**
  * Tipo de herencia: Extension
  */
-class Vehiculo(
-    val puertas: Int,
-    val matricula: String,
+open class Vehiculo(
+    private val ano: Int,
+    private val matricula: String,
     var color: String,
-    val marca: String,
-    private val modelo: String,
+    private val marca: String,
+    val modelo: String,
 ){
 
-    fun arrancar(): String {
+    open fun arrancar(): String {
         return "El vehiculo $modelo ha arrancado"
     }
 
     fun cambioColor(colorNuevo: String): String {
-        return color
+        this.color = colorNuevo
+        return colorNuevo
     }
 
-    fun parar(): String {
+    open fun parar(): String {
         return "El vehiculo $modelo ha parado"
     }
 
     override fun toString(): String {
-        return "El vehiculo con $puertas puertas, matricula: $matricula, color: $color, marca: $marca y modelo: $modelo"
+        return "El vehiculo del ano $ano, matricula: $matricula, color: $color, marca: $marca y modelo: $modelo"
     }
+
+}
+
+
+
+
+class Coche(
+    ano: Int,
+    matricula: String,
+    color: String,
+    marca: String,
+    modelo: String) : Vehiculo(ano, matricula, color, marca,
+    modelo
+) {
+
+    override fun arrancar(): String {
+        return "El coche $modelo ha arrancado"
+    }
+
+
+    override fun parar(): String {
+        return "El coche $modelo ha parado"
+    }
+
+
+}
+
+
+
+
+class Moto(
+    ano: Int,
+    matricula: String,
+    color: String,
+    marca: String,
+    modelo: String) : Vehiculo(ano, matricula, color, marca,
+    modelo
+) {
+
+    override fun arrancar(): String {
+        return "La moto $modelo ha arrancado"
+    }
+
+    override fun parar(): String {
+        return "La moto $modelo ha parado"
+    }
+
+}
+
+
+
+
+
+fun main() {
+
+    val coche1 = Coche(2019,"2045 LJD","Azul","Audi","Q5")
+
+    val moto1 = Moto(2018,"6834 LPT","Verde","BMW","X4")
+
+    coche1.cambioColor("Rojo")
+
+    println(coche1)
+
+    println(moto1)
 
 }
