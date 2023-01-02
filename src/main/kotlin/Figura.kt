@@ -1,7 +1,9 @@
 import kotlin.math.PI
 import kotlin.math.round
 
-
+/**
+ * Especializacion
+ */
 open class Figura(
     val posicionX: Int,
     val posicionY: Int
