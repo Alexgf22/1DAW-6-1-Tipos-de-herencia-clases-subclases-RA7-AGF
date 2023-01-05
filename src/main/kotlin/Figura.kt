@@ -2,7 +2,7 @@ import kotlin.math.PI
 import kotlin.math.round
 
 /**
- * Especializacion
+ * Tipo de herencia: Especializacion
  */
 open class Figura(
     val posicionX: Int,

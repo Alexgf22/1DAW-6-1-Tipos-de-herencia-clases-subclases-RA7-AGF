@@ -40,14 +40,17 @@ class Coche(
     modelo
 ) {
 
+    constructor(ano: Int,matricula: String,color: String,marca: String,modelo: String,numeroPuertas: Int) : this(ano,matricula,color,marca,modelo)
+
     override fun arrancar(): String {
-        return "El coche $modelo ha arrancado"
+        return "El coche $modelo ha sido arrancado por el conductor"
     }
 
 
     override fun parar(): String {
-        return "El coche $modelo ha parado"
+        return "El coche $modelo ha sido parado por el conductor"
     }
+
 
 
 }
@@ -65,11 +68,11 @@ class Moto(
 ) {
 
     override fun arrancar(): String {
-        return "La moto $modelo ha arrancado"
+        return "La moto $modelo ha sido arrancada por el motorista"
     }
 
     override fun parar(): String {
-        return "La moto $modelo ha parado"
+        return "La moto $modelo ha sido parada por el motorista"
     }
 
 }
@@ -80,7 +83,7 @@ class Moto(
 
 fun main() {
 
-    val coche1 = Coche(2019,"2045 LJD","Azul","Audi","Q5")
+    val coche1 = Coche(2019,"2045 LJD","Azul","Audi","Q5",5)
 
     val moto1 = Moto(2018,"6834 LPT","Verde","Kawasaki","Ninja 250SL")
 
