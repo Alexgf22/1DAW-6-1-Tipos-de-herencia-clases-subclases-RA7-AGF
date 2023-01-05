@@ -16,6 +16,16 @@ interface Juego {
 
 /**
  * Tipo de herencia: Especificacion
+ *
+ * La interfaz es Juego, la clase padre es Persona y la subclase es Gamer.
+ *
+ * Se crea una estructura donde la superclase especifica la interface de sus descendientes.
+ * Los descendientes pueden implementar los detalles.
+ *
+ * @property nombre: String  Nombre de la persona
+ * @property apellido: String  Apellido de la persona
+ * @property edad: Int  Edad de la persona
+ * @property juego: String Juego a que juega la persona
  */
 open class Persona(
     private val nombre: String,

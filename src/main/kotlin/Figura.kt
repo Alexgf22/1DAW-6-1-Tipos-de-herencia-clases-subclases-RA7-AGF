@@ -3,11 +3,14 @@ import kotlin.math.round
 
 /**
  * Tipo de herencia: Especializacion
+ *
+ * La clase es Figura y las subclases son: Circulo, Rectangulo y Triangulo.
+ *
+ * En este caso la clase padre Figura posee un comportamiento basico pero las subclases lo especializan
+ * dependiendo de sus caracteristicas. Por lo que se crea una estructura de clases en la que una especializa
+ * a la otra.
  */
-open class Figura(
-    val posicionX: Int,
-    val posicionY: Int
-) {
+open class Figura {
 
     open fun area(): String {
         return "El area de la figura es: "
@@ -16,14 +19,8 @@ open class Figura(
 
 
 class Circulo(
-    var radio: Int,
-    posicionX: Int,
-    posicionY: Int
-): Figura(posicionX, posicionY) {
-
-    constructor(radio: Int) : this(radio,0,0) {
-
-    }
+    private var radio: Int
+): Figura() {
 
 
     override fun area(): String {
@@ -33,17 +30,10 @@ class Circulo(
 
 }
 
-class Cuadrado(
-    var base: Int,
-    var altura: Int,
-    posicionX: Int,
-    posicionY: Int
-): Figura(posicionX, posicionY) {
-
-    constructor(base: Int,altura: Int) : this(base,altura,0,0) {
-
-    }
-
+class Rectangulo(
+    private var base: Int,
+    private var altura: Int
+): Figura() {
 
 
     override fun area(): String {
@@ -58,15 +48,9 @@ class Cuadrado(
 
 
 class Triangulo(
-    var base: Int,
-    var altura: Int,
-    posicionX: Int,
-    posicionY: Int
-): Figura(posicionX, posicionY) {
-
-    constructor(base: Int,altura: Int) : this(base,altura,0,0) {
-
-    }
+    private var base: Int,
+    private var altura: Int
+): Figura() {
 
     override fun area(): String {
         val resultado =  (base * altura) / 2
@@ -80,7 +64,7 @@ class Triangulo(
 
 fun main() {
 
-    val cuadrado1 = Cuadrado(12,10)
+    val cuadrado1 = Rectangulo(12,10)
 
     val circulo1 = Circulo(20)
 

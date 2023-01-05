@@ -1,5 +1,16 @@
 /**
  * Tipo de herencia: Extension
+ *
+ * La superclase es Vehiculo y las subclases son: Coche y Moto.
+ *
+ * Se crea estructura donde una clase extiende el comportamiento de otra sin que sea necesariamente
+ * un concepto mas especifico.
+ *
+ * @property ano: Int  Ano de fabricacion del coche
+ * @property matricula: String Matricula del coche
+ * @property color: String Color del coche
+ * @property marca: String Marca del coche
+ * @property modelo: String Modelo especifico de la marca del coche
  */
 open class Vehiculo(
     private val ano: Int,
@@ -36,11 +47,11 @@ class Coche(
     matricula: String,
     color: String,
     marca: String,
-    modelo: String) : Vehiculo(ano, matricula, color, marca,
+    modelo: String,
+    val numeroPuertas: Int) : Vehiculo(ano, matricula, color, marca,
     modelo
 ) {
 
-    constructor(ano: Int,matricula: String,color: String,marca: String,modelo: String,numeroPuertas: Int) : this(ano,matricula,color,marca,modelo)
 
     override fun arrancar(): String {
         return "El coche $modelo ha sido arrancado por el conductor"
@@ -49,6 +60,10 @@ class Coche(
 
     override fun parar(): String {
         return "El coche $modelo ha sido parado por el conductor"
+    }
+
+    override fun toString(): String {
+        return super.toString() + "ademas tiene $numeroPuertas puertas"
     }
 
 
