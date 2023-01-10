@@ -12,9 +12,7 @@ import kotlin.math.round
  */
 open class Figura {
 
-    open fun area(): String {
-        return "El area de la figura es: "
-    }
+    open fun area(): String = ""
 }
 
 
@@ -25,7 +23,7 @@ class Circulo(
 
     override fun area(): String {
         val resultado = round((PI * (radio * radio)))
-        return super.area() + resultado
+        return "El area del circulo es $resultado"
     }
 
 }
@@ -38,7 +36,7 @@ class Rectangulo(
 
     override fun area(): String {
         val resultado =  base * altura
-        return super.area() + resultado
+        return "El area del rectangulo es $resultado"
     }
 
 }
@@ -54,7 +52,7 @@ class Triangulo(
 
     override fun area(): String {
         val resultado =  (base * altura) / 2
-        return super.area() + resultado
+        return "El area del triangulo es $resultado"
     }
 
 }
