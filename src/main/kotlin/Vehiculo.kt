@@ -51,18 +51,22 @@ class Coche(
     color: String,
     marca: String,
     modelo: String,
-    val numeroPuertas: Int) : Vehiculo(ano, matricula, color, marca,
+    val numeroPuertas: Int
+    ) : Vehiculo(ano, matricula, color, marca,
     modelo
 ) {
 
+    var llaveGirada: Boolean = false
 
     override fun arrancar(): String {
-        return "El coche $modelo ha sido arrancado por el conductor"
+        llaveGirada = true
+        return "El coche $modelo ha arrancado"
+
     }
 
 
     override fun parar(): String {
-        return "El coche $modelo ha sido parado por el conductor"
+        return "El coche $modelo ha parado"
     }
 
     override fun toString(): String {
@@ -85,12 +89,15 @@ class Moto(
     modelo
 ) {
 
+    var patadaArranque : Boolean = false
+
     override fun arrancar(): String {
-        return "La moto $modelo ha sido arrancada por el motorista"
+        patadaArranque = true
+        return "La moto $modelo ha arrancado"
     }
 
     override fun parar(): String {
-        return "La moto $modelo ha sido parada por el motorista"
+        return "La moto $modelo ha parado"
     }
 
 }
