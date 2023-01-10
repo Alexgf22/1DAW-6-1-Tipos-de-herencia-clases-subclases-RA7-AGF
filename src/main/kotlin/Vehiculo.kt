@@ -11,6 +11,9 @@
  * @property color: String Color del coche
  * @property marca: String Marca del coche
  * @property modelo: String Modelo especifico de la marca del coche
+ *
+ * Anadir funcionalidad por ejemplo que el coche para arrancar meta la llave y gire y en la moto
+ * le de a la pata.
  */
 open class Vehiculo(
     private val ano: Int,
